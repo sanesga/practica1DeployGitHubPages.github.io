@@ -35,3 +35,63 @@ Your Pages site will use the layout and styles from the Jekyll theme you have se
 ### Support or Contact
 
 Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+
+# PRÁCTICA 1. INSTALACIÓN GITLAB EN LOCAL
+
+### Paso 1:
+
+- Instalar y configurar las dependencias necesarias:
+
+```markdown
+sudo apt-get update
+sudo apt-get install -y curl openssh-server ca-certificates
+```
+
+### Paso 2:
+
+- Instalar Postfix para recibir notificaciones por email:
+
+```markdown
+sudo apt-get install -y postfix
+```
+
+### Paso 3:
+
+- Añadir el repositorio del paquete de GitLab:
+
+```markdown
+curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
+```
+
+### Paso 4:
+
+- Instalar el paquete de GitLab:
+
+Cambiamos la URL por la que queramos, en nuestro caso será localhost, ya que, lo instalamos localmente.
+
+```markdown
+sudo EXTERNAL_URL="http://localhost:4000" apt-get install gitlab-ee
+```
+
+### Paso 5:
+
+- La primera vez, redirecciona a una pantalla de reinicio de contraseña.
+
+Una vez cambiada, redirecciona a la pantalla de login. Utilizamos el usuario `root` y la contraseña proporcionada anteriormente para hacer login.
+
+### Paso 6:
+
+- Modificamos las preferencias de las notificaciones de correo en la siguiente dirección: 
+
+https://about.gitlab.com/company/preference-center/
+
+
+
+
+
+
+
+
+
+
+
