@@ -40,7 +40,7 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 ### Paso 1:
 
-- Instalar y configurar las dependencias necesarias:
+- Instalar y configurar las dependencias:
 
 ```markdown
 sudo apt-get update
@@ -57,33 +57,52 @@ sudo apt-get install -y postfix
 
 ### Paso 3:
 
+- Durante la instalación de Postfix, aparece la siguiente [pantalla](img/captura1.png) de configuración.
+
+- En la siguiente [pantalla](img/captura2.png) seleccionar _Sitio de Internet_.
+
+- En la última [pantalla](img/captura3.png) introducir el nombre del sistema de correo que queramos.
+
+### Paso 4:
+
 - Añadir el repositorio del paquete de GitLab:
 
 ```markdown
 curl https://packages.gitlab.com/install/repositories/gitlab/gitlab-ee/script.deb.sh | sudo bash
 ```
 
-### Paso 4:
+### Paso 5:
 
 - Instalar el paquete de GitLab:
 
-Cambiamos la URL por la que queramos, en nuestro caso será localhost, ya que, lo instalamos localmente.
+- Cambiamos la URL por la que queramos, en nuestro caso será localhost, ya que, lo instalamos localmente.
 
 ```markdown
 sudo EXTERNAL_URL="http://localhost:4000" apt-get install gitlab-ee
 ```
 
-### Paso 5:
-
-- La primera vez, redirecciona a una pantalla de reinicio de contraseña.
-
-Una vez cambiada, redirecciona a la pantalla de login. Utilizamos el usuario `root` y la contraseña proporcionada anteriormente para hacer login.
-
 ### Paso 6:
 
-- Modificamos las preferencias de las notificaciones de correo en la siguiente dirección: 
+- La primera vez, redirecciona a la [pantalla](img/captura4.png) de reinicio de contraseña.
 
-https://about.gitlab.com/company/preference-center/
+- Una vez cambiada, redirecciona a la [pantalla](/img/captura5.png) de login. 
+
+- Utilizamos el usuario `root` y la contraseña proporcionada anteriormente para hacer login.
+
+- Una vez hecho login, ya tenemos [gitLab](img/captura6.png) instalado localmente en nuestro equipo.
+
+- Para abrir posteriormente GitLab, accedemos en nuestro navegador a la dirección especificada en el paso 5.
+
+```markdown
+http://localhost:4000"
+```
+
+
+
+
+### Paso 7:
+
+- Modificamos las preferencias de las notificaciones de correo en la siguiente dirección: https://about.gitlab.com/company/preference-center/
 
 
 
