@@ -7,14 +7,17 @@ GitLab es un servicio web de control de versiones y desarrollo de software colab
 
 ## Características
 
-- Posee diferentes versiones; _GitLab SAAS_ para empresas y _GitLab Community Edition_ para los usuarios.
+- Posee diferentes versiones; _GitLab SAAS_ para empresas y _GitLab Community Edition_ para usuarios.
 - Es gratuito, los usuarios pueden tener un número ilimitado de repositorios privados.
 - Opera bajo una licencia de código abierto.
 - Seguimiento de errores y edición de código basado en la web.
-- Integración con LDAP que permite localizar y acceder a diversos recursos de internet.
+- Integración con LDAP que permite localizar y acceder a diversos recursos de Internet.
 - Soporta la importación de Git.
 
-## Objetivo 
+
+## Objetivo de la práctica
+
+El objetivo de esta práctica es aprender a instalar, utilizar y configurar GitLab de manera local, tanto vía interfaz gráfico como por API. Esto nos permite ampliar nuestros conocimientos en materia de sistemas de control de versiones, proporcionándonos una alternativa más.
 
 
 # 1. Instalar GitLab en local.
