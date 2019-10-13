@@ -273,17 +273,28 @@ Cuando creamos un usuario, uno de los atributos opcionales es _"admin"_, que por
 
 ### 4.1. Modificar la página de creación de un nuevo proyecto.
 
+ - Accedemos a GitLab -> _Admin Area_ -> _Appearance_ -> _New project pages_
+ - Introducimos en el cuadro de texto, la información que queremos añadir a la sección lateral.
+ - El texto introducido corresponde al formato [GitLab Flavored Markdown](http://localhost:5000/help/user/markdown).
+ 
+   ![Screenshot](img/captura27.png)
 
+ - Vamos a la página de creación de un nuevo proyecto y visualizamos nuestro texto a continuación del texto por defecto.
 
-
-
+   ![Screenshot](img/captura28.png)
 
 
 ### 4.2. Modificar el logo y la descripción de la pantalla de login.
 
+ - Accedemos a GitLab -> _Admin Area_ -> _Appearance_ -> _Sign in/Sign up pages_
+ - Description: Añadimos una descripción.
+ - Logo: Seleccionamos el nuevo logo.
 
+  ![Screenshot](img/captura29.png)
 
+ - Observamos el resultado en la pantalla de login
 
+ ![Screenshot](img/captura30.png)
 
 
 ### 4.3. Modificar el favicon de GitLab.
@@ -292,9 +303,41 @@ Cuando creamos un usuario, uno de los atributos opcionales es _"admin"_, que por
  - Seleccionamos el nuevo icono, guardamos.
  - Observamos el icono cambiado en la pestaña del navegador.
 
- ![Screenshot](img/captura25.png)
+ ![Screenshot](img/captura26.png)
 
 ## 5. Detallar el proceso para poder importar proyectos de GitHub a GitLab por pantalla y por API.
+
+### 5.1. Importar proyecto por pantalla
+
+- Accedemos a GitLab -> New Project.
+
+  ![Screenshot](img/captura31.png)
+
+- Import Project -> Seleccionamos el lugar desde donde queremos importar el proyecto. En nuestro caso, GitHub.
+
+  ![Screenshot](img/captura32.png)
+
+- Nos pide el Token de GitHub, vamos a GitHub, lo creamos y lo añadimos.
+  **Entre las opciones, seleccionar permisos de repo**
+
+![Screenshot](img/captura34.png)
+![Screenshot](img/captura35.png)
+
+- Nos aparecerá una pantalla con todos nuestros proyectos, elegimos el que queremos importar.
+ ![Screenshot](img/captura36.png)
+
+
+- Cuando volvemos a la pantalla principal, nuestro proyecto estará añadido a la lista.
+
+ ![Screenshot](img/captura33.png)
+
+
+
+
+
+
+
+
 
 
 
