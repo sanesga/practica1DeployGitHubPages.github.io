@@ -1,42 +1,21 @@
-## Welcome to GitHub Pages
 
-You can use the [editor on GitHub](https://github.com/sanesga/practica1DeployGitHubPages.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+# PRÁCTICA 1. CREAR Y GESTIONAR NUESTRO SERVIDOR DE GITLAB
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+<img src="img/icono2.png" alt="alt text" width="100" height="100">
 
-### Markdown
+GitLab es un servicio web de control de versiones y desarrollo de software colaborativo basado en Git. Además de gestor de repositorios, el servicio ofrece también alojamiento de wikis y un sistema de seguimiento de errores, todo ello publicado bajo una Licencia de código abierto.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Características
 
-```markdown
-Syntax highlighted code block
+- Posee diferentes versiones; _GitLab SAAS_ para empresas y _GitLab Community Edition_ para los usuarios.
+- Es gratuito, los usuarios pueden tener un número ilimitado de repositorios privados.
+- Opera bajo una licencia de código abierto.
+- Seguimiento de errores y edición de código basado en la web.
+- Integración con LDAP que permite localizar y acceder a diversos recursos de internet.
+- Soporta la importación de Git.
 
-# Header 1
-## Header 2
-### Header 3
+## Objetivo 
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sanesga/practica1DeployGitHubPages.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
-
-# PRÁCTICA 1. CREAR Y GESTIONAR NUESTRO SERVIDOR DE GIT
 
 # 1. Instalar GitLab en local.
 
@@ -59,11 +38,22 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 ### Paso 3:
 
-- Durante la instalación de Postfix, aparece la siguiente [pantalla](img/captura1.png) de configuración.
+- Durante la instalación de Postfix, aparece la siguiente pantalla de configuración.
 
-- En la siguiente [pantalla](img/captura2.png) seleccionar _Sitio de Internet_.
 
-- En la última [pantalla](img/captura3.png) introducir el nombre del sistema de correo que queramos.
+  ![Screenshot](img/captura1.png)
+
+
+- En la siguiente pantallaseleccionar _Sitio de Internet_.
+  
+
+  ![Screenshot](img/captura2.png)
+
+
+- En la última pantalla introducir el nombre del sistema de correo que queramos.
+
+
+  ![Screenshot](img/captura3.png)
 
 ### Paso 4:
 
@@ -85,19 +75,32 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 ### Paso 6:
 
-- La primera vez, redirecciona a la [pantalla](img/captura4.png) de reinicio de contraseña.
+- La primera vez, redirecciona a la pantalla de reinicio de contraseña.
 
-- Una vez cambiada, redirecciona a la [pantalla](/img/captura5.png) de login. 
+
+  ![Screenshot](img/captura4.png)
+
+
+- Una vez cambiada, redirecciona a la pantalla de login. 
+
+
+  ![Screenshot](img/captura5.png)
+
 
 - Utilizamos el usuario **root** y la contraseña proporcionada anteriormente para hacer login.
 
-- Una vez hecho login, ya tenemos [gitLab](img/captura6.png) instalado localmente en nuestro equipo.
+- Una vez hecho login, ya tenemos GitLab instalado localmente en nuestro equipo.
 
-- A partir de ahora, para acceder a GitLab, introduciremos en nuestro navegador la [URL](img/captura7.png) especificada en el paso 5.
+  ![Screenshot](img/captura6.png)
+
+- A partir de ahora, para acceder a GitLab, introduciremos en nuestro navegador la URL especificada en el paso 5.
+
+  ![Screenshot](img/captura7.png)
 
 ### Paso 7:
 
-- Modificamos las preferencias de las notificaciones de correo en la siguiente dirección: https://about.gitlab.com/company/preference-center/
+- Modificamos las preferencias de las notificaciones de correo en la siguiente dirección:   
+  https://about.gitlab.com/company/preference-center/
 
 ## 2. Realizar labores de administración inicial.
 
@@ -146,11 +149,11 @@ Durante la instalación, lo habíamos establecido en el 4000. Lo modificamos de 
 
 - Entramos a GitLab --> _Admin Area_ --> _Settings_ --> _General_
 
- ![Screenshot](img/captura12.png)
+  ![Screenshot](img/captura12.png)
 
  - Expandimos la opción _Account and limit_ y en _Session duration_, cambiamos los minutos por defecto (10080) a los que queramos.
 
- ![Screenshot](img/captura13.png)
+  ![Screenshot](img/captura13.png)
 
 - Guardamos cambios y reiniciamos GitLab desde terminal.
 
@@ -201,7 +204,7 @@ Las peticiones las realizaremos a través de **Postman**.
   - En _Body_, introducimos los datos a cambiar.
   - Al pulsar send, nos aparecen los datos del usuario ya modificados:
 
-   ![Screenshot](img/captura17.png)
+    ![Screenshot](img/captura17.png)
 
 
  - **Borrado de usuarios**:
@@ -215,9 +218,9 @@ Las peticiones las realizaremos a través de **Postman**.
   - URL: http://localhost:5000/api/v4/users/2?private_token=*************
   - Al pulsar send, no aparecerá nada. Podemos verificar que el usuario se ha borrado yendo a _Admin Area_ -> _Users_
 
-   ![Screenshot](img/captura19.png)
+    ![Screenshot](img/captura19.png)
 
-   ![Screenshot](img/captura20.png)
+    ![Screenshot](img/captura20.png)
   
 ### 3.2. Bloqueo / desbloqueo de usuarios.
 
@@ -230,7 +233,7 @@ Las peticiones las realizaremos a través de **Postman**.
   - URL: http://localhost:5000/api/v4/users/5/block?private_token=**********
   - Devuelve True si todo ha ido bien.
 
-   ![Screenshot](img/captura21.png)
+    ![Screenshot](img/captura21.png)
 
   - Podemos comprobar que el usuario no se muestra en el área de usuarios de nuestra cuenta.
 
@@ -261,12 +264,12 @@ Cuando creamos un usuario, uno de los atributos opcionales es _"admin"_, que por
  - URL: http://localhost:5000/api/v4/projects/?private_token=************
  - En _Body_ añadimos los atributos que queremos incluir, en nuestro caso, añadimos nombre y descripción. Hay muchísimos más, pero el resto, dejamos que se rellenen por defecto y los modificaremos más adelante si los necesitamos.
 
- ![Screenshot](img/captura23.png)
- ![Screenshot](img/captura24.png)
+   ![Screenshot](img/captura23.png)
+   ![Screenshot](img/captura24.png)
 
  - Si vamos a GitLab, en el apartado _Admin Area_ -> _Projects_, veremos nuestro proyecto creado.
 
- ![Screenshot](img/captura25.png)
+    ![Screenshot](img/captura25.png)
 
  
 ## 4. Realizar labores de customización.
@@ -290,11 +293,11 @@ Cuando creamos un usuario, uno de los atributos opcionales es _"admin"_, que por
  - Description: Añadimos una descripción.
  - Logo: Seleccionamos el nuevo logo.
 
-  ![Screenshot](img/captura29.png)
+   ![Screenshot](img/captura29.png)
 
  - Observamos el resultado en la pantalla de login
 
- ![Screenshot](img/captura30.png)
+   ![Screenshot](img/captura30.png)
 
 
 ### 4.3. Modificar el favicon de GitLab.
@@ -303,7 +306,7 @@ Cuando creamos un usuario, uno de los atributos opcionales es _"admin"_, que por
  - Seleccionamos el nuevo icono, guardamos.
  - Observamos el icono cambiado en la pestaña del navegador.
 
- ![Screenshot](img/captura26.png)
+   ![Screenshot](img/captura26.png)
 
 ## 5. Detallar el proceso para poder importar proyectos de GitHub a GitLab por pantalla y por API.
 
@@ -320,19 +323,41 @@ Cuando creamos un usuario, uno de los atributos opcionales es _"admin"_, que por
 - Nos pide el Token de GitHub, vamos a GitHub, lo creamos y lo añadimos.
   **Entre las opciones, seleccionar permisos de repo**
 
-![Screenshot](img/captura34.png)
-![Screenshot](img/captura35.png)
+  ![Screenshot](img/captura34.png)
+  ![Screenshot](img/captura35.png)
 
 - Nos aparecerá una pantalla con todos nuestros proyectos, elegimos el que queremos importar.
- ![Screenshot](img/captura36.png)
+
+  ![Screenshot](img/captura36.png)
 
 
 - Cuando volvemos a la pantalla principal, nuestro proyecto estará añadido a la lista.
 
- ![Screenshot](img/captura33.png)
+  ![Screenshot](img/captura33.png)
 
 
+### 5.2. Importar proyecto por API
 
+Vía Postman:
+
+- MÉTODO: POST.
+- URL: http://localhost:5000/api/v4/import/github?private_token=*********
+- Añadimos al _Body_
+  - El personal_access_token: El que hemos obtenido en el punto anterior.
+  - El repo_id: Nos listamos los repositorio de github con el siguiente _end point_:
+    https://api.github.com/users/nombreUsuario/repos, lo que nos proporciona 1 id por cada repositorio que tengamos.
+  - El target_namespace: El nombre que queramos darle al nuevo repositorio.
+
+    ![Screenshot](img/captura37.png)
+
+   - Si accedemos a nuestros proyectos, nos aparece el nuevo repositorio clonado.
+
+     ![Screenshot](img/captura38.png)
+
+
+## 6. Documentación en GitHub Pages
+
+https://sanesga.github.io/practica1DeployGitLab.github.io/
 
 
 
