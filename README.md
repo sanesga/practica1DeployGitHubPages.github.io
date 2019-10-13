@@ -161,16 +161,138 @@ Durante la instalación, lo habíamos establecido en el 4000. Lo modificamos de 
 ## 3. Detallar ejemplos de procesos (vía llamadas a la API).
 
 ### 3.1. Alta, modificación y borrado de usuarios.
+
+Las peticiones las realizaremos a través de **Postman**.
+
+- **Alta de usuarios**:
+
+  Sólo pueden crear nuevos usuarios los administradores, por lo que necesitaremos un token con permisos. Para crearlo:
+
+  Accedemos a GitLab y en la configuración de nuestra cuenta de usuario:
+
+  ![Screenshot](img/captura14.png)
+
+  En la pestaña _Access Tokens_ creamos nuestro Token rellenando los campos:
+
+  ![Screenshot](img/captura15.png)
+
+  Rellenamos los campos en Postman:
+
+  - Método: POST.
+  - URL: http://localhost:5000/api/v4/users?private_token=***************
+  - Seleccionamos Body, raw, JSON.
+  - En _Body_, introducimos los datos del nuevo usuario (sólo los campos _required_ por ser una prueba), al hacer click en Send, lo crea y nos devuelve sus datos:
+
+    ![Screenshot](img/captura16.png)
+
+    Si vamos a GitLab, en _Admin Area_ -> _Users_ nos aparecerá el nuevo usuario creado:
+
+    ![Screenshot](img/captura18.png)
+ 
+ - **Modificación de usuarios**:
+
+   Como ejemplo vamos a modificar el nombre de usuario del usuario creado anteriormente:
+
+   En Postman introducimos los siguientes parámetros:
+
+  - Método: PUT.
+  - En la ruta, detrás de users introducimos el id del usuario.
+  - URL: http://localhost:5000/api/v4/users/2?private_token=*************
+  - En _Body_, introducimos los datos a cambiar.
+  - Al pulsar send, nos aparecen los datos del usuario ya modificados:
+
+   ![Screenshot](img/captura17.png)
+
+
+ - **Borrado de usuarios**:
+  
+    Vamos a borrar el usuario creado anteriormente:
+
+    En Postman introducimos los siguientes parámetros:
+
+  - Método: DELETE.
+  - En la ruta, detrás de users introducimos el id del usuario.
+  - URL: http://localhost:5000/api/v4/users/2?private_token=*************
+  - Al pulsar send, no aparecerá nada. Podemos verificar que el usuario se ha borrado yendo a _Admin Area_ -> _Users_
+
+   ![Screenshot](img/captura19.png)
+
+   ![Screenshot](img/captura20.png)
+  
 ### 3.2. Bloqueo / desbloqueo de usuarios.
+
+- **Bloqueo de usuario**
+
+  En Postman:
+
+  - MÉTODO: POST
+  - Tras users colocamos el id del usuario a bloquear + /block
+  - URL: http://localhost:5000/api/v4/users/5/block?private_token=**********
+  - Devuelve True si todo ha ido bien.
+
+   ![Screenshot](img/captura21.png)
+
+  - Podemos comprobar que el usuario no se muestra en el área de usuarios de nuestra cuenta.
+
+ - **Desbloqueo de usuario**
+
+   - Haremos lo mismo que antes pero con la palabra /unblock
+   - Nos dará true como resultado.
+   - Verificamos que el usuario vuelve a aparecer en el área de usuarios.
+
+
 ### 3.3. Establecer usuario como administrador.
+
+Cuando creamos un usuario, uno de los atributos opcionales es _"admin"_, que por defecto se añade a false. Vamos a modificar este campo de la misma forma que hemos modificado el nombre de usuario en el punto 3.1., vía Postman.
+
+- MÉTODO: PUT
+- Tras users, indicamos el id del usuario a modificar:
+- URL: http://localhost:5000/api/v4/users/5/?private_token=*******
+- En _Body_ indicamos el campo a modificar, al darle a send, nos devolverá el usuario con sus datos modificados.
+
+  ![Screenshot](img/captura22.png)
+
 ### 3.4. Creación de proyectos.
 
+ Vía Postman:
 
+ - MÉTODO: POST.
+ - Añadimos la palabra clave _projects_
+ - URL: http://localhost:5000/api/v4/projects/?private_token=************
+ - En _Body_ añadimos los atributos que queremos incluir, en nuestro caso, añadimos nombre y descripción. Hay muchísimos más, pero el resto, dejamos que se rellenen por defecto y los modificaremos más adelante si los necesitamos.
+
+ ![Screenshot](img/captura23.png)
+ ![Screenshot](img/captura24.png)
+
+ - Si vamos a GitLab, en el apartado _Admin Area_ -> _Projects_, veremos nuestro proyecto creado.
+
+ ![Screenshot](img/captura25.png)
+
+ 
 ## 4. Realizar labores de customización.
 
 ### 4.1. Modificar la página de creación de un nuevo proyecto.
+
+
+
+
+
+
+
 ### 4.2. Modificar el logo y la descripción de la pantalla de login.
+
+
+
+
+
+
 ### 4.3. Modificar el favicon de GitLab.
+
+ - Accedemos a GitLab -> _Admin Area_ -> _Appearance_ -> _Favicon_
+ - Seleccionamos el nuevo icono, guardamos.
+ - Observamos el icono cambiado en la pestaña del navegador.
+
+ ![Screenshot](img/captura25.png)
 
 ## 5. Detallar el proceso para poder importar proyectos de GitHub a GitLab por pantalla y por API.
 
